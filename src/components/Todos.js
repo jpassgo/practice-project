@@ -3,9 +3,12 @@ import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 
 class Todos extends React.Component {
-  render() {
+  markComplete = () => {
+    console.log('Hello')
+  }
+  render() { 
       return this.props.todos.map((todo) => (
-        <TodoItem key={todo.item} todo={todo}/>
+        <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete}/>
       ))
   }
 }
